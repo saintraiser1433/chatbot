@@ -6,7 +6,11 @@ export function ProductGrid({ products }) {
         {products.map((product) => (
           <div className='product-container' key={product.id}>
             <div className='product-image-container'>
-              <img className='product-image' src={product.image} />
+              <img
+                data-testid='product-image'
+                className='product-image'
+                src={product.image}
+              />
             </div>
 
             <div className='product-name limit-text-to-2-lines'>
@@ -15,6 +19,7 @@ export function ProductGrid({ products }) {
 
             <div className='product-rating-container'>
               <img
+                data-testid='product-rating'
                 className='product-rating-stars'
                 src={`images/ratings/rating-${product.rating.stars * 10}.png`}
               />
